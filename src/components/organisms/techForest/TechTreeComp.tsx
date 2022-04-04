@@ -33,7 +33,7 @@ export const TechTreeComp: FC<Props> = memo(({ treeData }) => {
   /**
    * 進捗率で並び替えした配列
    */
-  const sortTreeData = filterTreeData && [...filterTreeData];
+  const sortTreeData = treeData && [...treeData];
   sortTreeData?.sort((a, b) => {
     //achievementRateの降順
     if (a.achievementRate < b.achievementRate) return 1;
