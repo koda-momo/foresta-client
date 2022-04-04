@@ -44,8 +44,7 @@ const schema = yup.object().shape({
   content: yup
     .string()
     .required("詳細を入力してください")
-    .typeError("詳細を入力してください")
-    .max(150, "詳細は150文字以内で入力してください"),
+    .typeError("詳細を入力してください"),
   //担当工程
   devRoles: yup.array().nullable(),
   //OS
