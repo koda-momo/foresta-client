@@ -1,0 +1,36 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true, //node.jsの文法をプロジェクト内で使う場合
+    "jest/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
+  "ignorePatterns": ["build"], //gitignoreと同じ(ESLint が無視するファイルをコントロールできる)
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": { "jsx": true },
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "react", "jest"],
+  "rules": {
+    "semi": [2, "always"], //セミコロンないとエラー
+    "no-extra-semi": "warn", //セミコロンが複数ついているとエラー
+    "no-undef": "warn", //定義前に使おうとするとエラー
+    "quotes": ["warn", "double"], //ダブルクオーテーション
+    "space-before-blocks": ["warn", { "functions": "always" }], //いい感じのところに半角スペース
+    "react/prop-types": "off", //propsの型チェック不足でエラー→TypeScriptでチェックしてくれるのでOFF
+    "react/display-name": "off", //関数内部に定義した関数を無名関数にしてはいけないというルールを無効
+    "react/react-in-jsx-scope": "off"
+  }
+}
