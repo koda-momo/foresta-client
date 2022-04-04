@@ -63,8 +63,8 @@ export const TechTreeComp: FC<Props> = memo(({ treeData }) => {
                     TreeName={techTreeData.treeName}
                     AchievementRate={techTreeData.achievementRate}
                   />
-                  {treeData?.[indexOfTreeData].branches &&
-                    treeData?.[indexOfTreeData].branches.map(
+                  {sortTreeData?.[indexOfTreeData].branches &&
+                    sortTreeData?.[indexOfTreeData].branches.map(
                       (
                         techBranchData: TechBranch,
                         indexOfBranchData: number,
@@ -72,7 +72,7 @@ export const TechTreeComp: FC<Props> = memo(({ treeData }) => {
                         return (
                           <TechBranchComp
                             key={indexOfBranchData}
-                            treeData={treeData}
+                            treeData={sortTreeData}
                             indexOfTreeData={indexOfTreeData}
                             techBranchText={techBranchData.name}
                             indexOfBranchData={indexOfBranchData}
